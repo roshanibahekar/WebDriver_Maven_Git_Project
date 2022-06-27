@@ -16,7 +16,7 @@ public class LoginTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium_Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		// System.out.println("Launching Browser");
+		System.out.println("Launching Browser");
 	}
 
 	@Test
@@ -27,12 +27,16 @@ public class LoginTest {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+		System.out.println("Entering Username");
 		driver.findElement(By.cssSelector("#email")).sendKeys("roshanibahekar@gmail.com");
 
+		System.out.println("Entering Password");
 		driver.findElement(By.cssSelector("#pass")).sendKeys("qwerty");
 
+		System.out.println("Clicking on LogIn Button");
 		driver.findElement(By.cssSelector("#loginbutton")).click();
 
+		System.out.println("Logginning into facebook account");
 	}
 
 	@AfterTest
